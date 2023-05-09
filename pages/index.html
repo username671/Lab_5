@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Title }}</title>
+    <link href="static/images/icon.png" rel="icon">
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Oxygen:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container container_header">
+            <div class="logo__header">
+                Escape.
+            </div>
+            <div class="top_menu__header">
+                <ul>
+                    <li><a href="/home">HOME</a></li>
+                    <li><a href="#">CATEGORIES</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container h1__header">
+            <h1>{{ .Title }}</h1>
+            <h4>{{ .Subtitle }}</h4>
+            <button class="button__header"><a href="/post">View Latest Post</a></button>
+        </div>
+    </header>
+    <section class="section">
+        <div class="container container_main_menu">
+            <div class="main_menu__header">
+                <ul>
+                    <li><a href=#>Nature</a></li>
+                    <li><a href=#>Photography</a></li>
+                    <li><a href=#>Relaxation</a></li>
+                    <li><a href=#>Vacation</a></li>
+                    <li><a href=#>Travel</a></li>
+                    <li><a href=#>Adventure</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container container_featured">
+            <div class="featured__section">
+                <h2>Featured Posts</h2>
+            </div>
+            <div class="main_featured__section">
+                {{ range .FeaturedPosts }}
+                <div class="featured_block__section" style="background:url({{ .Bg }});background-size:cover;">
+                    <h3><a href="{{ .Link }}">{{ .Title }}</a></h3>
+                    <h6>{{ .Subtitle }}</h6>
+                    <div class="featured_block__info">
+                        <div class="featured_block__author">
+                            <img src="{{ .AuthorAvatar }}" />
+                            <span class="featured_block">{{ .AuthorName }}</span>
+                        </div>
+                        <span class="date">{{ .PublishDate }}</span>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container container_recent">
+            <div class="recent__section">
+                <h2>Most Recent</h2>
+            </div>
+            <div class="main_recent__section">
+                {{ range .RecentPosts }}
+                <div class="maint_recent__block">
+                    <div class="resent_block__img">
+                        <img src="{{ .Bg }}" />
+                    </div>
+                    <div class="recent_block__section">
+                        <h4>{{ .Title }}</h4>
+                        <h5>{{ .Subtitle }}</h5>
+                        <div class="recent_block__info">
+                            <div class="recent_block__author">
+                                <img src="{{ .AuthorAvatar }}" />
+                                <span class="recent_block1 recent_block">{{ .AuthorName }}</span>
+                            </div>
+                            <span class="recent_block1 date">{{ .PublishDate }}</span>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+    </section>
+    <footer>
+        <div class="container container_footer">
+            <div class="subscribe_footer">
+                <div class="subscribe__section">
+                    <h2>Stay in Touch</h2>
+                </div>
+                <div class="subscribe_input__footer">
+                    <input type="text" placeholder="Enter your email address" />
+                    <button class="subscribe_botton__footer">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="background_footer">
+            <div class="container container_footer">
+                <div class="logo__footer">
+                    Escape.
+                </div>
+                <div class="top_menu__footer">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href=#>CATEGORIES</a></li>
+                        <li><a href=#>ABOUT</a></li>
+                        <li><a href=#>CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

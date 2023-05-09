@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Title }}</title>
+    <link href="static/images/icon.png" rel="icon">
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Oxygen:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="post">
+        <div class="container container_header">
+            <div class="logo__header">
+                Escape.
+            </div>
+            <div class="top_menu__header">
+                <ul>
+                    <li><a href="/home">HOME</a></li>
+                    <li><a href=#>CATEGORIES</a></li>
+                    <li><a href=#>ABOUT</a></li>
+                    <li><a href=#>CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container h1__header">
+            <h1>{{ .Title }}</h1>
+            <h4>{{ .Subtitle }}</h4>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            {{ range .Paragraphs }}
+            <p>{{ .Content }}</p>
+            {{ end }}
+        </div>
+    </section>
+    <footer>
+        <div class="container container_footer container_subscribe__footer">
+            <div class="subscribe_footer">
+                <div class="subscribe__section">
+                    <h2>Stay in Touch</h2>
+                </div>
+                <div class="subscribe_input__footer">
+                    <input type="text" placeholder="Enter your email address" />
+                    <button class="subscribe_botton__footer">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="background_footer">
+            <div class="container container_footer container_logo__footer">
+                <div class="logo__footer">
+                    Escape.
+                </div>
+                <div class="top_menu__footer">
+                    <ul>
+                        <li><a href="/home">HOME</a></li>
+                        <li><a href=#>CATEGORIES</a></li>
+                        <li><a href=#>ABOUT</a></li>
+                        <li><a href=#>CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
